@@ -1,0 +1,81 @@
+/*
+ * Copyright (C) 2012-2020  Online-Go.com
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+
+.Captures {
+    flex: 1;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    .Captures-svg-background {
+        position: relative;
+        background-image: svg-load("../assets/misc/captures-back.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+
+        display: inline-block;
+        //flex: 1;
+        //min-height: 50%;
+        //min-width: 50%;
+        height: 50%;
+        min-height: 3rem;
+        min-width: 3rem;
+        max-height: 10rem;
+        max-width: 10rem;
+        aspect-ratio: 1 / 1;
+
+        .Captures-stone {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20%
+            aspect-ratio: 1 / 1;
+        }
+
+        .Captures-svg-foreground {
+            position: absolute;
+            background-image: svg-load("../assets/misc/captures-front.svg");
+            background-repeat: no-repeat;
+            z-index: 999;
+            width: 100%;
+            height: 60%;
+            top: 13%;
+            left: 8%;
+        }
+
+        .score {
+            position: absolute;
+            border: 2px solid #85C442;
+            color: #85C442;
+            border-radius: 0.5rem;
+            padding: 0.2rem;
+            min-width: 4rem;
+            font-size: 1.3rem;
+            //top: -3rem;
+            //top: -3rem;
+            bottom: -2.5rem;
+            right: calc(50% - 2.3rem);
+            text-align: center;
+            background-color: rgba(80,80,80,0.8);
+            font-weight: normal;
+        }
+    }
+
+}

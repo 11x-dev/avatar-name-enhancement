@@ -1,0 +1,191 @@
+/*
+ * Copyright (C) 2012-2020  Online-Go.com
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+
+
+#LearnToPlay {
+    position: absolute;
+    background-color: #001533;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: stretch;
+
+    +portrait() {
+        flex-direction: column;
+    }
+
+    .spacer {
+        flex-grow: 0;
+        flex-shrink: 1;
+        +portrait() {
+            height: "calc((100vh - 100vw) / 2)" % "";
+        }
+        +landscape() {
+            width: "calc((100vw - 100vh) / 2)" % "";
+        }
+    }
+
+    .back-background {
+        position: absolute;
+        display: inline-block;
+        margin: auto;
+        top: 20%;
+        bottom: 20%;
+        left: 20%;
+        right: 20%;
+        /*
+        top: 30vh;
+        bottom: 30vh;
+        left: 30vw;
+        right: 30vw;
+        */
+        background-size: cover;
+        background-image: url("/1.0/pages/lessons/planet.jpg") !important;
+    }
+
+    .background-container {
+        flex-grow: 1;
+        position: relative;
+        text-align: center;
+    }
+
+    .background {
+        flex-grow: 1;
+        z-index: 1;
+        position: absolute;
+        display: inline-block;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        background-image: url("/1.0/pages/lessons/background.svg");
+        background-repeat: no-repeat;
+    }
+
+    .chapter-container {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 1;
+        width: 7rem;
+    }
+
+    .chapter-1-container {
+        left: "calc(50% - 3.5rem)" % "";
+        top: 12%;
+    }
+
+    .chapter-2-container {
+        right: 20%;
+        top: 24%;
+    }
+
+    .chapter-3-container {
+        top: "calc(50% - 1.5rem)" % "";
+        right: 11%;
+    }
+
+    .chapter-4-container {
+        right: 20%;
+        bottom: 20%;
+    }
+
+    .chapter-5-container {
+        left: "calc(50% - 3.5rem)" % "";
+        bottom: 12%;
+    }
+
+    .chapter-6-container {
+        left: 20%;
+        bottom: 20%;
+    }
+
+    .chapter-7-container {
+        top: "calc(50% - 1.5rem)" % "";
+        left: 12%;
+    }
+
+    .chapter-8-container {
+        left: 20%;
+        top: 24%;
+    }
+
+    .ChapterButton {
+        position: relative;
+        display: inline-flex;
+        width: 3rem;
+        height: 3rem;
+        z-index: 1;
+        background-image: svg-load("../assets/pages/lessons/button.svg");
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        opacity: 0.8;
+
+        &:hover {
+            opacity: 1.0;
+            cursor: pointer;
+        }
+
+        &.disabled {
+            background-image: svg-load("../assets/pages/lessons/active.svg");
+            cursor: not-allowed;
+        }
+    }
+
+    .chapter-text {
+        position: relative;
+        color: #001533;
+        text-align: center;
+        margin-top: 0.5rem;
+        font-size: 1.25rem;
+        background-color:rgb(195, 232, 250); 
+        border: 1px solid #9fbcc5;
+        border-radius: 4px;
+        padding: 0.5rem
+
+        &:hover {
+            cursor: pointer;
+            background-color: rgba(208, 238, 249, 0.87);
+        }
+
+        &.disabled {
+            color: #001533;
+            cursor: not-allowed;
+            background-color:rgb(48, 119, 219); 
+        }
+    
+        +portrait() {
+            font-size: 0.8rem;
+            padding: 0.1rem;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}

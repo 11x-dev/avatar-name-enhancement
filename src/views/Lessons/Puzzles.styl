@@ -1,0 +1,78 @@
+/*
+ * Copyright (C) 2012-2020  Online-Go.com
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+* The majority of the styling for the Puzzles.tsx component is still in the Lesson.styl file, since the large majority of the styling should still match what the lessons look like
+*/
+
+.puzzle-sections {
+    margin-left: 2rem;
+    margin-top: -1.5rem;
+}
+
+.section-link {
+    cursor: pointer;
+    margin-bottom: 1rem;
+    background: rgb(208,238,249);
+    color: black;
+    border: none;
+    padding: 0.75rem;
+    margin-right: 2rem;
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+    text-shadow: none;
+    
+    &:hover {
+        opacity: 0.85;
+    }
+}
+
+.active-section {
+    color: rgb(46, 165, 250);
+}
+
+// Mobile text at bottom center of screen
+.puzzle-center {
+    flex: 1;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.7rem;
+    overflow: hidden;
+}
+
+#portrait-hint {
+    position: absolute;
+    right: 3.8rem;
+    top: 1rem;
+    cursor: pointer;
+
+    +landscape() {
+        display: none;
+    }
+
+    .hint-icon {
+        width: 3rem;
+        height: 3rem;
+        background-image: svg-load("../assets/1.0/buttons/lightbulb-hint-icon-hover-off.svg");
+
+        &.hints-on {
+            background-image: svg-load("../assets/1.0/buttons/lightbulb-hint-icon-hover.svg");
+        }
+    }
+}
+

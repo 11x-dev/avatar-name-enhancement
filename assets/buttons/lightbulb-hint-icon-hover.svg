@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 149 149" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:10;">
+    <g id="MULTI">
+        <circle id="SVGID" cx="74.34" cy="74.34" r="56.5" style="fill:url(#_Radial1);stroke:rgb(88,255,88);stroke-width:5px;"/>
+        <g transform="matrix(1.8,0,0,1.8,17.1,20)">
+            <path d="M32 14a10 10 0 0 0-5 18.7V38a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-5.3A10 10 0 0 0 32 14zm-3 28h6v2h-6v-2zm0 4h6v2h-6v-2z" fill="rgb(17,17,17)" stroke="rgb(88,255,88)" stroke-width="1px"/>
+            <path d="M32 10v-4M20.2 16.2l-2.8-2.8M14 32h-4M20.2 47.8l-2.8 2.8M32 54v4M43.8 47.8l2.8 2.8M50 32h4M43.8 16.2l2.8-2.8" stroke="rgb(88,255,88)" stroke-width="1.5" fill="none"/>
+        </g>
+    </g>
+    <defs>
+        <radialGradient id="_Radial1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(56.5,0,0,56.5,74.34,74.34)">
+            <stop offset="0" style="stop-color:rgb(242,242,242);stop-opacity:1"/>
+            <stop offset="0.34" style="stop-color:rgb(242,242,242);stop-opacity:1"/>
+            <stop offset="0.99" style="stop-color:rgb(204,204,204);stop-opacity:1"/>
+            <stop offset="1" style="stop-color:rgb(204,204,204);stop-opacity:1"/>
+        </radialGradient>
+    </defs>
+</svg>

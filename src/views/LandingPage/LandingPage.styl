@@ -1,0 +1,158 @@
+/*
+ * Copyright (C) 2012-2020  Online-Go.com
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+ROCKET_LAUNCH_DURATION = 1.25s
+
+@keyframes rocket-launch {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100vh);
+    }
+}
+
+:root {
+    //--ROCKETWIDTH: min(10vw, 10rem);
+    --ROCKETWIDTH: "min(20vw, 10rem)" % "";
+    --ROCKETHEIGHT: calc(var(--ROCKETWIDTH) * 3);
+    --FLAMEWIDTH: calc(var(--ROCKETWIDTH) / 2);
+    --FLAMECENTER: calc(var(--FLAMEWIDTH) / 2);
+    --FLAMEHEIGHT: calc(var(--ROCKETHEIGHT) / 2);
+}
+
+#LandingPage {
+    position: absolute;
+    background-color: #001533;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: stretch;
+    overflow: hidden;
+
+    +portrait() {
+        flex-direction: column;
+    }
+
+    .spacer {
+        flex-grow: 0;
+        flex-shrink: 1;
+        +portrait() {
+            height: "calc((100vh - 100vw) / 2)" % "";
+        }
+        +landscape() {
+            width: "calc((100vw - 100vh) / 2)" % "";
+        }
+    }
+
+    .mountain-background {
+        flex-grow: 1;
+        position: relative;
+        text-align: center;
+        background-image: url("/1.0/pages/home/background_with_logos_6_1_2025.svg");
+        background-repeat: no-repeat;
+    }
+
+    .logo {
+        position: absolute;
+        text-align: center;
+        background-image: url("/1.0/pages/home/kidsgoserver.svg");
+        background-repeat: no-repeat;
+        display: inline-block;
+        width: 80%;
+        height: 80%;
+        left: 10%;
+    }
+
+    .learn-to-play-rocket, .play-rocket {
+        position: absolute;
+        bottom: calc(var(--ROCKETHEIGHT) * 0.1 + 0.8rem);
+        width: var(--ROCKETWIDTH);
+        text-align: center;
+        height: var(--ROCKETHEIGHT);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        z-index: z.rocket;
+        cursor: pointer;
+
+        .flames {
+            display: none;
+            z-index: z.flame;
+            height: var(--FLAMEHEIGHT);
+            width: var(--FLAMEWIDTH);
+            position: absolute;
+            top: var(--ROCKETHEIGHT);
+            left: "calc(var(--ROCKETWIDTH) / 2 - (var(--FLAMECENTER) / 2) * 1.2)" % "";
+            background-image: svg-load("../assets/pages/home/flame.svg");
+            background-repeat: no-repeat;
+            background-position: 0 -30px;
+        }
+
+        .label {
+            position: relative;
+            color: white;
+            top: calc(var(--ROCKETHEIGHT) * 0.5 - 0.75rem);
+
+        }
+    }
+
+    .learn-to-play-rocket {
+        left: 5vw;
+        background-image: url("/1.0/pages/home/learn.svg");
+    }
+
+    .play-rocket {
+        right: 5vw;
+        background-image: url("/1.0/pages/home/play.svg");
+    }
+
+    .launch {
+        transform: translateY(-100vh);
+        animation: rocket-launch ROCKET_LAUNCH_DURATION;
+        animation-timing-function: cubic-bezier(0.73, 0.27, 0.95, 0.66);
+
+        .flames {
+            display: inline-block;
+        }
+    }
+
+    .launchpad {
+        position: absolute;
+        display: inline-block;
+        bottom: calc(var(--ROCKETHEIGHT) * 0.05);
+        height: calc(var(--ROCKETHEIGHT) * 0.1);
+        width: var(--ROCKETWIDTH);
+        text-align: center;
+        background-repeat: no-repeat;
+    }
+
+    .learn-launchpad {
+        left: 5vw;
+        background-image: svg-load("../assets/pages/home/launchpad.svg");
+    }
+
+    .play-launchpad {
+        right: 5vw;
+        background-image: svg-load("../assets/pages/home/launchpad.svg");
+    }
+}

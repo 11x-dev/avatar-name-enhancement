@@ -1,0 +1,55 @@
+{
+    "compileOnSave": false,
+    "buildOnSave": false,
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "target": "es2015",
+        "moduleResolution": "node",
+        "isolatedModules": true,
+        "esModuleInterop": true,
+        "removeComments": false,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "lib": ["es2015", "dom"],
+        "baseUrl": ".",
+        "paths": {
+            "@kidsgo/*": ["src/*"],
+            "@/*": ["online-go.com/src/*"],
+            "requests": ["online-go.com/src/lib/requests"],
+            "goban": ["online-go.com/submodules/goban/src"],
+            "goscorer": ["online-go.com/submodules/goban/src/third_party/goscorer/goscorer"],
+            "react-dynamic-help": ["online-go.com/submodules/react-dynamic-help/src"]
+        },
+
+        "forceConsistentCasingInFileNames": true,
+        "allowSyntheticDefaultImports": true,
+
+        "noImplicitAny": false,
+        "noImplicitReturns": false,
+        "noImplicitThis": false,
+        "strictBindCallApply": false,
+        "strictFunctionTypes": false,
+        "strictNullChecks": false,
+        "strictPropertyInitialization": false,
+        "noUnusedLocals": false,
+
+        "sourceMap": true,
+        "jsx": "react",
+        "skipLibCheck": true
+    },
+    "files": [
+        "./src/kidsgo.tsx",
+        "./vite.config.ts",
+        "online-go.com/src/models/moderation.d.ts",
+        "online-go.com/src/models/challenges.d.ts",
+        "online-go.com/src/models/games.d.ts",
+        "online-go.com/src/models/moderation.d.ts",
+        "online-go.com/src/models/onlineleague.d.ts",
+        "online-go.com/src/models/overview.d.ts",
+        "online-go.com/src/models/puzzles.d.ts",
+        "online-go.com/src/models/tournaments.d.ts",
+        "online-go.com/src/models/user.d.ts",
+        "online-go.com/src/models/warning.d.ts"
+    ],
+    "exclude": ["node_modules", "online-go.com"]
+}

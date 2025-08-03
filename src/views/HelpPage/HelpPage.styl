@@ -1,0 +1,111 @@
+.HelpNav .BackButton {
+    position: static;
+}
+
+#scroll-top-anchor {
+    position: absolute;
+    top: 0;
+}
+
+.HelpPage {
+    display: flex;
+    min-height: 100vh;
+    background: rgb(208,238,249);
+  
+    +portrait() {
+        flex-direction: column;
+    }
+}
+
+.NavHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.HelpNav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 220px;
+    background: rgb(137, 194, 231);
+    padding: 20px;
+    border-right: 1px solid rgb(208,238,249);
+    flex-shrink: 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+
+    +portrait() {
+        position: static;
+        height: auto;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgb(208,238,249);
+        border-radius: 0;
+        box-shadow: none;
+    }
+}
+
+.HelpNav h2 {
+    font-size: 1.5rem;
+    color: black;
+}
+
+.HelpNav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1.5rem;
+}
+
+.HelpNav li {
+    margin-bottom: 0;
+}
+
+.HelpNav li button {
+    background: rgb(208,238,249);
+    border: none;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    color: black;
+
+    &:hover {
+        opacity: 0.85;
+        cursor: pointer;
+    }
+
+    +portrait() {
+        width: 50%;
+    }
+}
+
+.HelpContent {
+    padding-left: 360px;
+    padding-right: 40px;
+    max-width: 800px;
+
+    +portrait() {
+        margin-left: 0;
+        padding: 20px;
+    }
+}
+
+.HelpContent h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.HelpContent p {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    color: #444;
+    font-weight: normal;
+}
